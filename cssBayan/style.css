@@ -86,11 +86,6 @@ h1 {
     margin: auto;
 }
 
-.accordeon-container div:nth-child(3) .item-image {
-    background: black;
-    /* background-image: url("assets/plus-icon.svg"); */
-}
-
 #image1  {
     background-image: url("assets/1.png");
 }
