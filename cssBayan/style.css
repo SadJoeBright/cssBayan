@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.accordeon-container {
+    max-width: 50vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    transition: all ease-in-out .5s;    
+}
+
+h1 {
+    font-size: calc(2vw + 30%) ;
+}
+
+.accordeon-item {
+    border-top: solid 1px rgb(228, 223, 223);
+    padding:  1vw 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (hover: hover) {
+
+    .accordeon-item:hover  .item-image { 
+        display: flex;
+        opacity: 1;
+        height: 30vw;
+    }
+
+    .accordeon-container:hover  .item-icon { 
+        opacity: 1;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .accordeon-container:hover  .item-title { 
+        color: black;
+    }
+
+    .accordeon-item:hover   .item-icon { 
+        opacity: 1;
+        width: 2vw;
+        height: 2vw;
+        transform: rotate(45deg);
+    }
+}
+
+.item-title {
+    width: 45vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+    cursor: pointer;
+    color: blue;
+    font-size:  calc(1.5vw + 30%);
+}
+
+.accordeon-input {
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+
+.item-icon {    
+    width: 2vw;
+    height: 2vw;
+    background-image: url("assets/plus-icon.svg");
+    background-size: cover;
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}
+
+.item-image {
+    opacity: 0;
+    width: 30vw;
+    height: 0;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s ease-in-out;
+    display: flex;
+    margin: auto;
+}
+
+#image1  {
+    background-image: url("assets/1.png");
+}
+
+#image2  {
+    background-image: url("assets/2.png");
+}
+
+#image3  {
+    background-image: url("assets/3.png");
+}
+
+#image4  {
+    background-image: url("assets/4.png");
+}
+
+#image5  {
+    background-image: url("assets/5.png");
+}
+
+.accordeon-input:checked + .item-title  {
+    color: black;
+}
+
+.accordeon-input:checked + .item-title .item-image {
+    opacity: 1;
+    height: 30vw;
+}
+
+.accordeon-input:checked + .item-title .item-icon {   
+    transform: rotate(45deg);
+}
+
+.accordeon-item:active {
+    opacity: 0.5;
+}
+
+.accordeon-item:active  .item-title {
+    color: blue;
+}
